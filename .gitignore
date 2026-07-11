@@ -31,6 +31,11 @@ venv/
 ENV/
 env/
 
+# Node dependencies
+node_modules/
+dist/
+build-artifacts/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 .ipynb_checkpoints/
