@@ -3025,3 +3025,28 @@ A continuación, se detalla la clasificación completa de los incidentes del dat
 |   **3998**   | HCE                  | Nota de evolucion tarda 21s en guardarse                                     | **Eficiencia** (Comportamiento Temporal)                 |       **RNF-01** (Latencia HCE)        | El tiempo de guardado supera los 8 segundos tolerables, violando directamente el requerimiento no funcional RNF-01 de rendimiento del sistema para notas clínicas.       |
 |   **3999**   | Farmacia             | Inventario del sistema no coincide con el stock fisico del insumo            | **Efectividad** (Precisión y Completitud)                |            _Funcionalidad_             | Falla de funcionalidad en el módulo Farmacia que impide al usuario completar sus tareas de manera precisa y completa.                                                    |
 |   **4000**   | Telemedicina         | El chat de la consulta no permite enviar imagenes                            | **Efectividad** (Precisión y Completitud)                |            _Funcionalidad_             | Restricción de funcionalidad que impide al usuario realizar una acción requerida para completar su tarea.                                                                |
+
+---
+
+## 3. Discusión en Grupo: Análisis del Incidente 1005
+
+### Pregunta de Debate:
+
+_¿Por qué el Incidente 1005 ("Tiempo de espera en el portal supera los 18s en horas pico") corresponde principalmente a Libertad de Riesgo y no a Efectividad, a pesar de tratarse también de un error del sistema?_
+
+---
+
+### Análisis Técnico y Crítica de la Pregunta
+
+#### 1. Diagnóstico de la Clasificación Estándar (ISO/IEC 25022)
+
+Desde una perspectiva estrictamente normativa bajo el estándar **ISO/IEC 25022 (Calidad en Uso)**, el **Incidente 1005** se clasifica de forma primaria bajo la característica de **Eficiencia** (subcaracterística de _Comportamiento Temporal_). Esto se debe a que un tiempo de respuesta de 18 segundos representa un consumo excesivo y degradado de **recursos de tiempo** para realizar una tarea (agendar una cita), sin que el sistema deje de funcionar necesariamente de manera definitiva.
+
+#### 2. Justificación de "Libertad de Riesgo" frente a "Efectividad"
+
+Si obligamos al análisis a debatir únicamente entre **Efectividad** y **Libertad de Riesgo** (excluyendo temporalmente la eficiencia), la balanza se inclina hacia **Libertad de Riesgo** por las siguientes razones de impacto en el ecosistema de MediSalud:
+
+- **¿Por qué no es Efectividad?**: La _Efectividad_ mide la precisión y la completitud con la que los usuarios logran sus metas. Si el usuario experimenta una lentitud de 18 segundos pero, tras esperar, la cita se registra de forma correcta y completa en la base de datos, la **Efectividad** del sistema sigue siendo del 100%. El proceso completó su flujo final con exactitud, por lo que no es un error de efectividad en el resultado.
+- **¿Por qué sí es Libertad de Riesgo?**: En un entorno hospitalario y de negocios, una latencia extrema de 18 segundos en el portal de citas introduce dos riesgos críticos en producción:
+  1.  **Riesgo Económico y Comercial (Pérdida de Clientes)**: Una latencia mayor a 4-5 segundos en entornos web suele causar tasas de abandono superiores al 50%. Los pacientes frustrados cerrarán el portal e irán a agendar sus citas con redes hospitalarias de la competencia, lo que genera una pérdida financiera directa para MediSalud.
+  2.  **Riesgo para la Salud (Seguridad del Paciente)**: El portal es el canal de entrada a la red médica. Si un paciente en una condición de salud prioritaria (pero no de emergencia extrema) sufre demoras sistemáticas para conseguir una consulta, el retraso tecnológico puede posponer diagnósticos clínicos tempranos, poniendo indirectamente en riesgo la integridad física del paciente.
