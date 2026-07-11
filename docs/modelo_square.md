@@ -44,42 +44,83 @@ Para comprender cómo interactúan estos tres niveles en el sistema **MediSalud 
 
 ## 3. Mapa Conceptual de la Familia SQuaRE (ISO/IEC 25000)
 
-El siguiente mapa conceptual organiza jerárquicamente las normas clave que componen el estándar SQuaRE, detallando la función específica de cada una dentro del proceso de control de calidad:
+El siguiente mapa conceptual organiza jerárquicamente las normas clave que componen el estándar SQuaRE, detallando la función específica de cada una y conectándolas directamente con los **tres niveles de calidad** y sus respectivos ejemplos del caso **MediSalud HIS**:
 
 ```mermaid
 flowchart TD
-    subgraph SQuaRE ["Familia ISO/IEC 25000: SQuaRE (System and Software Quality Requirements and Evaluation)"]
+    %% Standards Subgraph
+    subgraph SQuaRE ["MARCO NORMATIVO ISO/IEC 25000 (SQuaRE)"]
+        direction TB
+        N25000["ISO/IEC 25000: Guía General\n(Terminología, gestión y planificación común)"]
+        N25010["ISO/IEC 25010: Modelos de Calidad\n(Define características de Producto y Calidad en Uso)"]
+        N25022["ISO/IEC 25022: Medición de Calidad en Uso\n(Fórmulas y métricas para evaluar producción real)"]
+        N25040["ISO/IEC 25040: Proceso de Evaluación\n(Metodología estructurada de evaluación en 5 pasos)"]
+        
+        N25000 --> N25010
+        N25010 --> N25022
+        N25022 --> N25040
+    end
+
+    %% Levels of Quality Subgraph
+    subgraph Niveles ["NIVELES DE CALIDAD CON EJEMPLOS DE MEDISALUD HIS"]
         direction TB
         
-        G25000["ISO/IEC 25000: Guía General y Planificación<br><i>(Define la terminología común, objetivos del marco y directrices para planificación)</i>"]
-        
-        subgraph Divisiones ["Módulos de Trabajo Clave"]
-            direction LR
-            
-            M25010["ISO/IEC 25010: Modelos de Calidad<br><b>¿Qué medir?</b><br><i>(Define las características que componen la Calidad del Producto y la Calidad en Uso)</i>"]
-            
-            M25020["ISO/IEC 2502X: División de Medición<br><b>¿Cómo medir?</b><br><i>(Fórmulas matemáticas y métricas. Ej: <b>ISO/IEC 25022</b> para Calidad en Uso)</i>"]
-            
-            M25040["ISO/IEC 25040: División de Evaluación<br><b>¿Cómo evaluar?</b><br><i>(Metodología, fases y requisitos para ejecutar un proceso de evaluación formal)</i>"]
+        subgraph Interna ["CALIDAD INTERNA (Estática - Código/Arquitectura)"]
+            direction TB
+            CI_Def["Mide propiedades internas del software sin ejecutar el código"]
+            CI_Ej["Ejemplo MediSalud: Complejidad ciclomática < 10 de guardarRecetaElectronica"]
+            CI_Tool["Herramientas: SonarQube / Cobertura Pytest >= 80%"]
+            CI_Def --> CI_Ej --> CI_Tool
         end
         
-        G25000 --> M25010
-        G25000 --> M25020
-        G25000 --> M25040
+        subgraph Externa ["CALIDAD EXTERNA (Dinámica - QA/Staging)"]
+            direction TB
+            CE_Def["Mide el comportamiento del sistema en ejecución (entorno de pruebas)"]
+            CE_Ej["Ejemplo MediSalud: Tiempo respuesta de /api/recetas/guardar < 2s con 150 usuarios"]
+            CE_Tool["Herramientas: JMeter / Locust en Staging"]
+            CE_Def --> CE_Ej --> CE_Tool
+        end
         
-        M25010 -.-> |"Define las características<br>analizadas por"| M25020
-        M25020 -.-> |"Proporciona las métricas<br>matemáticas usadas en"| M25040
+        subgraph Uso ["CALIDAD EN USO (Operativa - Producción Real)"]
+            direction TB
+            CU_Def["Mide el impacto real en el trabajo diario de usuarios reales"]
+            CU_Ej["Ejemplo MediSalud: Tasa de incidentes por dosis incorrecta en recetas"]
+            CU_Tool["Herramientas: Archivo de quejas e incidentes (incidentes_2025.csv)"]
+            CU_Def --> CU_Ej --> CU_Tool
+        end
     end
+
+    %% Cross-subgraph Relationships
+    N25010 ===|Estructura conceptual de| Interna
+    N25010 ===|Estructura conceptual de| Externa
+    N25010 ===|Estructura conceptual de| Uso
     
-    style SQuaRE fill:#fdfdfd,stroke:#333,stroke-width:2px;
-    style G25000 fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    style M25010 fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    style M25020 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
-    style M25040 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+    N25022 ===|Proporciona métricas para| Uso
+    
+    CI_Tool -.->|Insumo de evaluación| N25040
+    CE_Tool -.->|Insumo de evaluación| N25040
+    CU_Tool -.->|Insumo de evaluación| N25040
+
+    %% Styling
+    style SQuaRE fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    style Niveles fill:#f0f7ff,stroke:#005cbf,stroke-width:2px;
+    
+    style N25000 fill:#e1f5fe,stroke:#0288d1,stroke-width:1.5px;
+    style N25010 fill:#fff3e0,stroke:#f57c00,stroke-width:1.5px;
+    style N25022 fill:#e8f5e9,stroke:#388e3c,stroke-width:1.5px;
+    style N25040 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:1.5px;
+    
+    style Interna fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
+    style Externa fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
+    style Uso fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
 ```
 
-### Relación y Roles de las Normas:
-1.  **ISO/IEC 25000 (Guía General):** Es el mapa de ruta. Establece el marco común y define el vocabulario para que todos los involucrados (desarrolladores, evaluadores, clientes) hablen el mismo lenguaje de calidad.
-2.  **ISO/IEC 25010 (Modelos de Calidad / ¿Qué medir?):** Estructura conceptualmente la calidad. Para la *Calidad del Producto*, define 8 características (como mantenibilidad, seguridad o compatibilidad). Para la *Calidad en Uso*, define las 5 características analizadas en este taller (Efectividad, Eficiencia, Satisfacción, Libertad de Riesgo y Cobertura de Contexto).
-3.  **ISO/IEC 25022 (Medición de Calidad en Uso / ¿Cómo medir?):** Traduce el modelo teórico de la 25010 en números. Proporciona las métricas y fórmulas específicas (por ejemplo, la fórmula para la tasa de error en transacciones o el tiempo promedio de tarea) para evaluar empíricamente la calidad en uso en producción.
-4.  **ISO/IEC 25040 (Proceso de Evaluación):** Establece el "paso a paso" metodológico para llevar a cabo la evaluación de calidad de principio a fin, definiendo responsabilidades y entregables en las fases de requisitos, diseño, ejecución y reporte.
+### Relación y Roles de las Normas e Integración de Niveles de Calidad:
+
+1. **ISO/IEC 25000 (Guía General):** Establece el marco común, la terminología estándar y los requisitos para planificar el control de calidad en el proyecto MediSalud HIS. Asegura la alineación de objetivos de negocio con métricas de software.
+2. **ISO/IEC 25010 (Modelos de Calidad):** Estructura conceptualmente la calidad en dos dimensiones principales:
+   * **Calidad del Producto (Interna/Externa):** Clasifica atributos técnicos del código y la arquitectura (**Calidad Interna**, p. ej., mantenibilidad del método `guardarRecetaElectronica()`) y el comportamiento dinámico observable en pruebas (**Calidad Externa**, p. ej., rendimiento del endpoint `/api/recetas/guardar`).
+   * **Calidad en Uso:** Define las dimensiones operativas clave del sistema en el mundo real (Efectividad, Eficiencia, Satisfacción, Libertad de Riesgo y Cobertura de Contexto) en las que se enmarca la interacción de los médicos con la historia clínica electrónica.
+3. **ISO/IEC 25022 (Medición de Calidad en Uso):** Traduce el modelo teórico en números reales. Proporciona la metodología y las fórmulas matemáticas para cuantificar el impacto clínico y operativo en producción, como el cálculo de la tasa de fallas en prescripciones críticas mediante el análisis del registro de incidentes (`incidentes_2025.csv`).
+4. **ISO/IEC 25040 (Proceso de Evaluación):** Define el proceso paso a paso (establecer requisitos, especificar la evaluación, diseñar la evaluación, ejecutarla y concluirla) para evaluar de forma rigurosa los tres niveles de calidad (Interna, Externa y en Uso), consolidando los reportes de SonarQube, JMeter e incidentes operativos en un veredicto de calidad integral.
+
