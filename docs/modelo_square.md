@@ -46,74 +46,7 @@ Para comprender cómo interactúan estos tres niveles en el sistema **MediSalud 
 
 El siguiente mapa conceptual organiza jerárquicamente las normas clave que componen el estándar SQuaRE, detallando la función específica de cada una y conectándolas directamente con los **tres niveles de calidad** y sus respectivos ejemplos del caso **MediSalud HIS**:
 
-```mermaid
-flowchart TD
-    %% Standards Subgraph
-    subgraph SQuaRE ["MARCO NORMATIVO ISO/IEC 25000 (SQuaRE)"]
-        direction TB
-        N25000["ISO/IEC 25000: Guía General\n(Terminología, gestión y planificación común)"]
-        N25010["ISO/IEC 25010: Modelos de Calidad\n(Define características de Producto y Calidad en Uso)"]
-        N25022["ISO/IEC 25022: Medición de Calidad en Uso\n(Fórmulas y métricas para evaluar producción real)"]
-        N25040["ISO/IEC 25040: Proceso de Evaluación\n(Metodología estructurada de evaluación en 5 pasos)"]
-        
-        N25000 --> N25010
-        N25010 --> N25022
-        N25022 --> N25040
-    end
-
-    %% Levels of Quality Subgraph
-    subgraph Niveles ["NIVELES DE CALIDAD CON EJEMPLOS DE MEDISALUD HIS"]
-        direction TB
-        
-        subgraph Interna ["CALIDAD INTERNA (Estática - Código/Arquitectura)"]
-            direction TB
-            CI_Def["Mide propiedades internas del software sin ejecutar el código"]
-            CI_Ej["Ejemplo MediSalud: Complejidad ciclomática < 10 de guardarRecetaElectronica"]
-            CI_Tool["Herramientas: SonarQube / Cobertura Pytest >= 80%"]
-            CI_Def --> CI_Ej --> CI_Tool
-        end
-        
-        subgraph Externa ["CALIDAD EXTERNA (Dinámica - QA/Staging)"]
-            direction TB
-            CE_Def["Mide el comportamiento del sistema en ejecución (entorno de pruebas)"]
-            CE_Ej["Ejemplo MediSalud: Tiempo respuesta de /api/recetas/guardar < 2s con 150 usuarios"]
-            CE_Tool["Herramientas: JMeter / Locust en Staging"]
-            CE_Def --> CE_Ej --> CE_Tool
-        end
-        
-        subgraph Uso ["CALIDAD EN USO (Operativa - Producción Real)"]
-            direction TB
-            CU_Def["Mide el impacto real en el trabajo diario de usuarios reales"]
-            CU_Ej["Ejemplo MediSalud: Tasa de incidentes por dosis incorrecta en recetas"]
-            CU_Tool["Herramientas: Archivo de quejas e incidentes (incidentes_2025.csv)"]
-            CU_Def --> CU_Ej --> CU_Tool
-        end
-    end
-
-    %% Cross-subgraph Relationships
-    N25010 ===|Estructura conceptual de| Interna
-    N25010 ===|Estructura conceptual de| Externa
-    N25010 ===|Estructura conceptual de| Uso
-    
-    N25022 ===|Proporciona métricas para| Uso
-    
-    CI_Tool -.->|Insumo de evaluación| N25040
-    CE_Tool -.->|Insumo de evaluación| N25040
-    CU_Tool -.->|Insumo de evaluación| N25040
-
-    %% Styling
-    style SQuaRE fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    style Niveles fill:#f0f7ff,stroke:#005cbf,stroke-width:2px;
-    
-    style N25000 fill:#e1f5fe,stroke:#0288d1,stroke-width:1.5px;
-    style N25010 fill:#fff3e0,stroke:#f57c00,stroke-width:1.5px;
-    style N25022 fill:#e8f5e9,stroke:#388e3c,stroke-width:1.5px;
-    style N25040 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:1.5px;
-    
-    style Interna fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
-    style Externa fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
-    style Uso fill:#ffffff,stroke:#7f8c8d,stroke-width:1.5px;
-```
+![Mapa Conceptual de la Familia SQuaRE y Niveles de Calidad](mapa_square.png)
 
 ### Relación y Roles de las Normas e Integración de Niveles de Calidad:
 

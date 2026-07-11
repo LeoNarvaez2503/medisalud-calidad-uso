@@ -48,3 +48,7 @@ build-artifacts/
 *.njsproj
 *.sln
 *.sw?
+
+# Docs
+generar_notebook.py
+generar_mapa_conceptual.py
