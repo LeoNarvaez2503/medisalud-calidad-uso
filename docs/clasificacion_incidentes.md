@@ -21,7 +21,7 @@ La ejecución del script de procesamiento de datos (`scripts/clasificar_incident
 
 ## 2. Tabla 2.2: Clasificación Detallada de Incidentes
 
-A continuación, se detalla la clasificación completa de los 3,000 incidentes del dataset, correlacionados con los **Requerimientos No Funcionales (RNF)** prioritarios del sistema:
+A continuación, se detalla la clasificación completa de los incidentes del dataset, correlacionados con los **Requerimientos No Funcionales (RNF)** prioritarios del sistema:
 
 | ID Incidente | Módulo | Descripción de la Queja / Incidente | Característica Asignada | RNF Relacionado | Justificación Técnica de Clasificación |
 | :---: | :--- | :--- | :--- | :---: | :--- |
