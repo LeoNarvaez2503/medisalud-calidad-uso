@@ -10,23 +10,23 @@ El proyecto está organizado bajo la siguiente estructura de directorios:
 
 ```text
 medisalud-calidad-uso/
-├── app/                    # Aplicativo MediSalud HIS y contenedores Docker
-│   ├── backend-api/        # Backend microservicios en FastAPI
-│   ├── frontend/           # Frontend React SPA
-│   ├── nginx/              # Configuración de proxy inverso
-│   └── docker-compose.yml  # Orquestador de contenedores
+├── dashboards/             # Visualizaciones gráficas del dashboard de calidad en uso (.png)
+│   ├── distribucion_iso.png
+│   ├── distribucion_modulos.png
+│   └── incidentes_sedes.png
 ├── data/
 │   └── incidentes_2025.csv # Conjunto de datos de 3,000 incidentes clasificados
-├── dashboards/
-│   └── analisis_dashboards.ipynb # Cuaderno de Jupyter interactivo con visualizaciones Plotly
 ├── docs/
 │   ├── analisis_inicial.md       # Escenario 1: Análisis del caso empresarial y preguntas de negocio
 │   ├── clasificacion_incidentes.md # Escenario 2: Clasificación e incidentes ISO 25022 (Tabla 2.2)
+│   ├── mapa_square.png           # Mapa conceptual de la familia SQuaRE generado
 │   └── modelo_square.md          # Escenario 3: Resumen teórico de SQuaRE y mapa conceptual Mermaid
 ├── reportes/               # Carpeta para compilación de reportes adicionales
 ├── scripts/
+│   ├── analisis_dashboards.ipynb # Cuaderno de Jupyter interactivo con visualizaciones Plotly
 │   ├── clasificar_incidentes.py  # Script en Python que automatiza la clasificación del dataset
-│   └── generar_notebook.py       # Script en Python que crea el cuaderno de Jupyter
+│   ├── generar_mapa_conceptual.py # Script en Python que genera el mapa conceptual de SQuaRE
+│   └── generar_notebook.py       # Script en Python que crea/actualiza el cuaderno de Jupyter
 ├── README.md               # Guía del proyecto e instrucciones
 └── requirements.txt        # Dependencias del entorno de Python
 ```
@@ -37,7 +37,7 @@ medisalud-calidad-uso/
 
 ### Requisitos Previos
 *   Python 3.11 o superior instalado.
-*   Git y Docker instalados.
+*   Git instalado.
 
 ### Instalación del Entorno
 1.  **Clonar u organizar el repositorio localmente:**
@@ -53,16 +53,7 @@ medisalud-calidad-uso/
     pip install -r requirements.txt
     ```
 
-### Ejecución de los Contenedores (Aplicativo HIS)
-*   **Iniciar el simulador local:**
-    Ingrese a la carpeta del aplicativo y levante la infraestructura:
-    ```bash
-    cd app
-    docker compose up --build -d
-    ```
-    *Acceso:* Abra [http://localhost:8080](http://localhost:8080) en su navegador.
-
-### Ejecución de los Scripts de Análisis (Fuera de Docker)
+### Ejecución de los Scripts de Análisis
 *   **Clasificar el dataset:**
     El script procesa los 3,000 incidentes originales y los guarda clasificados con justificaciones técnicas y correlación de Requerimientos No Funcionales (RNF):
     ```bash
@@ -80,7 +71,7 @@ medisalud-calidad-uso/
 *   **Visualizar el Dashboard:**
     Inicie Jupyter Notebook para visualizar los gráficos interactivos de Plotly:
     ```bash
-    jupyter notebook dashboards/analisis_dashboards.ipynb
+    jupyter notebook scripts/analisis_dashboards.ipynb
     ```
 
 ---
