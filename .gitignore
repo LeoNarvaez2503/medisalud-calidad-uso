@@ -52,3 +52,4 @@ build-artifacts/
 # Docs
 generar_notebook.py
 generar_mapa_conceptual.py
+clasificar_incidentes.py
