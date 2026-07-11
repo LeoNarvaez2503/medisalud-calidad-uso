@@ -10,7 +10,11 @@ El proyecto está organizado bajo la siguiente estructura de directorios:
 
 ```text
 medisalud-calidad-uso/
-├── .venv/                  # Entorno virtual de Python (excluido en .gitignore)
+├── app/                    # Aplicativo MediSalud HIS y contenedores Docker
+│   ├── backend-api/        # Backend microservicios en FastAPI
+│   ├── frontend/           # Frontend React SPA
+│   ├── nginx/              # Configuración de proxy inverso
+│   └── docker-compose.yml  # Orquestador de contenedores
 ├── data/
 │   └── incidentes_2025.csv # Conjunto de datos de 3,000 incidentes clasificados
 ├── dashboards/
@@ -33,7 +37,7 @@ medisalud-calidad-uso/
 
 ### Requisitos Previos
 *   Python 3.11 o superior instalado.
-*   Git configurado.
+*   Git y Docker instalados.
 
 ### Instalación del Entorno
 1.  **Clonar u organizar el repositorio localmente:**
@@ -42,14 +46,23 @@ medisalud-calidad-uso/
     cd medisalud-calidad-uso
     ```
 
-2.  **Crear e instalar dependencias en el entorno virtual:**
+2.  **Crear e instalar dependencias en el entorno virtual de análisis:**
     ```bash
     python3 -m venv .venv
     source .venv/bin/activate
     pip install -r requirements.txt
     ```
 
-### Ejecución de los Scripts
+### Ejecución de los Contenedores (Aplicativo HIS)
+*   **Iniciar el simulador local:**
+    Ingrese a la carpeta del aplicativo y levante la infraestructura:
+    ```bash
+    cd app
+    docker compose up --build -d
+    ```
+    *Acceso:* Abra [http://localhost:8080](http://localhost:8080) en su navegador.
+
+### Ejecución de los Scripts de Análisis (Fuera de Docker)
 *   **Clasificar el dataset:**
     El script procesa los 3,000 incidentes originales y los guarda clasificados con justificaciones técnicas y correlación de Requerimientos No Funcionales (RNF):
     ```bash
