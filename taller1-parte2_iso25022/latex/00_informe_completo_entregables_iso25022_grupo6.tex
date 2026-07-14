@@ -2,18 +2,27 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[a4paper,margin=1.55cm]{geometry}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{caption}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{longtable}
 \usepackage{tabularx}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+\setlength{\parskip}{4pt}
 \setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.18}
+\renewcommand{\arraystretch}{1.12}
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\figurename}{Figura}
+\captionsetup{font=small,labelfont=bf}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{10pt}{4pt}{\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{7pt}{3pt}{\normalfont\large\bfseries}}
+\makeatother
+\sloppy
 
 \begin{document}
 
@@ -22,17 +31,19 @@
 \centering
 {\Large Universidad de las Fuerzas Armadas\par}
 {\LARGE \textbf{ESPE}\par}
+\vspace{0.25cm}
+\includegraphics[width=0.28\textwidth]{Logo_ESPE.png}\par
 \vspace{0.35cm}
 {\large Departamento de Ciencias de la Computación\par}
-\vspace{1.5cm}
+\vspace{0.95cm}
 {\Large \textbf{Aseguramiento de la Calidad de Software}\par}
-\vspace{0.5cm}
+\vspace{0.35cm}
 {\large \textbf{Grupo: 6}\par}
-\vspace{1.2cm}
-{\Large \textbf{Informe Único de Calidad en Uso ISO/IEC 25022}\par}
+\vspace{0.9cm}
+{\LARGE \textbf{Informe Único de Calidad en Uso ISO/IEC 25022}\par}
 \vspace{0.35cm}
 {\large Caso de estudio: Sistema de Historia Clínica Electrónica MediSalud HIS\par}
-\vfill
+\vspace{1.1cm}
 \begin{tabular}{rl}
 \textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
 & Anthony Morales, Leonardo Narváez\\
@@ -53,7 +64,6 @@ El presente informe consolida en un solo documento los entregables del taller de
 
 El objetivo es transformar la percepción sobre el funcionamiento del sistema hospitalario en evidencia objetiva, comparable y accionable. Para ello se relacionan las tareas críticas de médicos, pacientes y personal administrativo con métricas de efectividad, eficiencia, satisfacción, libertad de riesgo y cobertura de contexto.
 
-\newpage
 \section{Comprensión del Modelo SQuaRE}
 
 \subsection{Niveles de calidad: interna, externa y en uso}
@@ -85,15 +95,14 @@ Calidad en uso & Contabilizar incidentes reales donde la receta electrónica se 
 \normalsize
 
 \subsection{Mapa conceptual de SQuaRE}
-\begin{figure}[h]
+\begin{center}
 \centering
-\includegraphics[width=0.92\textwidth]{mapa_square.png}
-\caption{Familia ISO/IEC 25000 SQuaRE y relación con calidad interna, externa y en uso.}
-\end{figure}
+\includegraphics[width=0.72\textwidth]{mapa_square.png}
+\captionof{figure}{Familia ISO/IEC 25000 SQuaRE y relación con calidad interna, externa y en uso.}
+\end{center}
 
 ISO/IEC 25000 establece el marco general, ISO/IEC 25010 define los modelos de calidad, ISO/IEC 25022 proporciona las métricas de Calidad en Uso e ISO/IEC 25040 ordena el proceso de evaluación. En conjunto, estas normas permiten conectar la arquitectura técnica del producto con resultados operativos observables en el contexto hospitalario.
 
-\newpage
 \section{Escenario 4: Identificación de Atributos de Calidad en Uso}
 
 \small
@@ -115,7 +124,7 @@ Facturación con seguro médico & Personal de admisión/facturación & Generar f
 
 \subsection{Conclusión}
 La calidad en uso debe medirse sobre tareas concretas, no sobre módulos abstractos. Estas fichas permiten convertir procesos críticos en métricas comparables y accionables.
-\newpage
+
 \section{Escenario 5: Mapeo de Características de Calidad}
 
 \small
@@ -145,7 +154,7 @@ Se recomiendan para medición inmediata las prioridades 1 y 2: HCE, portal de ci
 
 \subsection{Conclusión}
 La priorización evita medir todo sin foco y concentra recursos en los procesos con mayor riesgo clínico, financiero y reputacional.
-\newpage
+
 \section{Escenario 6: Catálogo de Métricas ISO/IEC 25022}
 
 \small
@@ -169,7 +178,7 @@ Consistencia entre sedes & Cobertura de Contexto & Mejor tiempo promedio / peor 
 
 \subsection{Interpretación}
 Los umbrales se fijan antes del cálculo para evitar interpretaciones subjetivas. Cada métrica tiene fuente, unidad y responsable, por lo que puede automatizarse.
-\newpage
+
 \section{Escenario 7: Obtención y Validación de Datos}
 
 \small
@@ -209,7 +218,7 @@ incidentes\_2025.csv & 0 & 0 & No aplica & Válido \\
 
 \subsection{Resumen}
 El tiempo promedio HCE fue 7.43 s y el CSAT promedio fue 3.61/5. Los datos quedaron listos para automatización.
-\newpage
+
 \section{Escenario 8: Automatización de la Medición}
 
 \small
@@ -255,7 +264,7 @@ Cobertura de Contexto & Consistencia de eficiencia entre sedes & 0.9801 & 0.85 &
 
 \subsection{Interpretación}
 Aunque el promedio de HCE cumple 8 s, el RNF-01 no cumple porque solo 67.87\% de notas se registran dentro del umbral. También no cumplen satisfacción y riesgo de facturación.
-\newpage
+
 \section{Informe Ejecutivo y Plan de Mejora Continua}
 
 \small
