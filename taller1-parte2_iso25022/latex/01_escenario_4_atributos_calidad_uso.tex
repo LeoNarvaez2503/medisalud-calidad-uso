@@ -1,0 +1,63 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Escenario 4: Atributos de Calidad en Uso}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Escenario 4: Identificación de Atributos de Calidad en Uso}
+
+\small
+\begin{longtable}{p{0.16\textwidth} p{0.13\textwidth} p{0.23\textwidth} p{0.21\textwidth} p{0.21\textwidth}}
+\toprule
+\textbf{Proceso} & \textbf{Usuario} & \textbf{Tarea representativa} & \textbf{Contexto de uso} & \textbf{Atributos} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Proceso} & \textbf{Usuario} & \textbf{Tarea representativa} & \textbf{Contexto de uso} & \textbf{Atributos} \\
+\midrule
+\endhead
+Atención médica y registro de HCE & Médico tratante & Registrar una nota de evolución clínica completa con diagnóstico, indicaciones y firma electrónica. & Consulta externa, 10:00-12:00, red interna de Quito, alta concurrencia. & Eficiencia: tiempo de tarea. Efectividad: completitud. Satisfacción: fluidez. Libertad de Riesgo: información clínica correcta. \\
+Agendamiento de citas & Paciente & Agendar una cita con especialista seleccionando sede, fecha, horario y confirmación. & Portal web o app móvil, red celular, 18:00-21:00, sedes de alta demanda. & Efectividad: tasa de éxito. Eficiencia: pasos y tiempo. Satisfacción: confianza. Cobertura: web y móvil. \\
+Facturación con seguro médico & Personal de admisión/facturación & Generar factura, validar convenio, procesar pago/copago y emitir comprobante correcto. & Punto de admisión, cierre de jornada, integración con sistema financiero heredado. & Libertad de Riesgo: errores financieros. Efectividad: exactitud. Eficiencia: tiempo de proceso. Cobertura: sede y rol. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Conclusión}
+La calidad en uso debe medirse sobre tareas concretas, no sobre módulos abstractos. Estas fichas permiten convertir procesos críticos en métricas comparables y accionables.
+
+
+\end{document}

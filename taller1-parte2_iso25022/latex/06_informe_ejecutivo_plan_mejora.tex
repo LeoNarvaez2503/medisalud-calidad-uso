@@ -1,0 +1,84 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Informe Ejecutivo y Plan de Mejora}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Informe Ejecutivo y Plan de Mejora Continua}
+
+\small
+\begin{longtable}{p{0.25\textwidth} p{0.30\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Hallazgo} & \textbf{Evidencia} & \textbf{Impacto} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Hallazgo} & \textbf{Evidencia} & \textbf{Impacto} \\
+\midrule
+\endhead
+Incidentes de efectividad concentrados & 1.493 de 3.000 incidentes & Usuarios no completan tareas o las completan con errores. \\
+Riesgo clínico y financiero & 721 incidentes de Libertad de Riesgo & Posibles errores de medicación, exposición de datos y problemas de facturación. \\
+RNF-01 incumplido & 67.87\% de notas en <= 8 s frente a umbral de 90\% & Lentitud en consulta externa y menor productividad médica. \\
+RNF-03 incumplido & 3.01\% de errores de facturación frente a umbral de 1\% & Riesgo financiero y pérdida de confianza. \\
+Satisfacción baja & CSAT normalizado de 0.7227 frente a 0.80 & Experiencia percibida insuficiente. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.14\textwidth} p{0.34\textwidth} p{0.22\textwidth} p{0.20\textwidth}}
+\toprule
+\textbf{Fase PDCA} & \textbf{Acciones} & \textbf{Responsable} & \textbf{Evidencia} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Fase PDCA} & \textbf{Acciones} & \textbf{Responsable} & \textbf{Evidencia} \\
+\midrule
+\endhead
+Planificar & Definir umbrales, tareas prioritarias y fuentes oficiales. & Calidad, TI, Dirección Médica & Catálogo de métricas. \\
+Hacer & Ejecutar pipeline semanal y generar indicadores. & TI y Calidad & indicadores.json. \\
+Verificar & Comparar resultados contra RNF-01, RNF-03 y CSAT. & Calidad y Auditoría & Informe mensual. \\
+Actuar & Optimizar HCE, facturación, UX e integraciones críticas. & TI, Producto, Operaciones & Backlog de mejoras. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Recomendación}
+Aprobar un ciclo de mejora de 90 días centrado en HCE y facturación, con seguimiento quincenal de indicadores y reporte ejecutivo mensual.
+
+
+\end{document}

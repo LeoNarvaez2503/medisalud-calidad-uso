@@ -1,0 +1,255 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Informe Completo de Entregables ISO/IEC 25022}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+
+\section*{Introducción}
+El presente informe consolida los entregables del taller de medición de Calidad en Uso mediante ISO/IEC 25022 para el caso MediSalud HIS. Se incluyen las fichas de usuario-tarea-contexto, la matriz de priorización, el catálogo de métricas, la obtención de datos, la automatización de indicadores y el plan de mejora continua.
+
+\newpage
+\section*{Escenario 4: Identificación de Atributos de Calidad en Uso}
+
+\small
+\begin{longtable}{p{0.16\textwidth} p{0.13\textwidth} p{0.23\textwidth} p{0.21\textwidth} p{0.21\textwidth}}
+\toprule
+\textbf{Proceso} & \textbf{Usuario} & \textbf{Tarea representativa} & \textbf{Contexto de uso} & \textbf{Atributos} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Proceso} & \textbf{Usuario} & \textbf{Tarea representativa} & \textbf{Contexto de uso} & \textbf{Atributos} \\
+\midrule
+\endhead
+Atención médica y registro de HCE & Médico tratante & Registrar una nota de evolución clínica completa con diagnóstico, indicaciones y firma electrónica. & Consulta externa, 10:00-12:00, red interna de Quito, alta concurrencia. & Eficiencia: tiempo de tarea. Efectividad: completitud. Satisfacción: fluidez. Libertad de Riesgo: información clínica correcta. \\
+Agendamiento de citas & Paciente & Agendar una cita con especialista seleccionando sede, fecha, horario y confirmación. & Portal web o app móvil, red celular, 18:00-21:00, sedes de alta demanda. & Efectividad: tasa de éxito. Eficiencia: pasos y tiempo. Satisfacción: confianza. Cobertura: web y móvil. \\
+Facturación con seguro médico & Personal de admisión/facturación & Generar factura, validar convenio, procesar pago/copago y emitir comprobante correcto. & Punto de admisión, cierre de jornada, integración con sistema financiero heredado. & Libertad de Riesgo: errores financieros. Efectividad: exactitud. Eficiencia: tiempo de proceso. Cobertura: sede y rol. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Conclusión}
+La calidad en uso debe medirse sobre tareas concretas, no sobre módulos abstractos. Estas fichas permiten convertir procesos críticos en métricas comparables y accionables.
+\newpage
+\section*{Escenario 5: Mapeo de Características de Calidad}
+
+\small
+\begin{longtable}{p{0.25\textwidth} p{0.10\textwidth} p{0.12\textwidth} p{0.35\textwidth} p{0.08\textwidth}}
+\toprule
+\textbf{Tarea} & \textbf{Impacto} & \textbf{Frecuencia} & \textbf{Características ISO/IEC 25022} & \textbf{Prioridad} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Tarea} & \textbf{Impacto} & \textbf{Frecuencia} & \textbf{Características ISO/IEC 25022} & \textbf{Prioridad} \\
+\midrule
+\endhead
+Registrar nota de evolución clínica & Alto & Alta & Eficiencia, Efectividad, Satisfacción, Libertad de Riesgo & 1 \\
+Agendar cita en portal & Alto & Alta & Efectividad, Eficiencia, Satisfacción, Cobertura de Contexto & 1 \\
+Facturar consulta con seguro & Alto & Media & Libertad de Riesgo, Efectividad, Eficiencia & 2 \\
+Completar teleconsulta & Alto & Media & Efectividad, Cobertura de Contexto, Satisfacción & 2 \\
+Dispensar medicamento desde receta electrónica & Alto & Media & Libertad de Riesgo, Efectividad & 2 \\
+Consultar historial de laboratorio & Medio & Alta & Efectividad, Satisfacción & 3 \\
+Generar reporte gerencial mensual & Medio & Baja & Eficiencia, Efectividad & 3 \\
+Actualizar datos personales desde app móvil & Bajo & Media & Cobertura de Contexto, Satisfacción & 4 \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Alcance inicial}
+Se recomiendan para medición inmediata las prioridades 1 y 2: HCE, portal de citas, facturación, teleconsulta y dispensación de medicamentos.
+
+\subsection*{Conclusión}
+La priorización evita medir todo sin foco y concentra recursos en los procesos con mayor riesgo clínico, financiero y reputacional.
+\newpage
+\section*{Escenario 6: Catálogo de Métricas ISO/IEC 25022}
+
+\small
+\begin{longtable}{p{0.23\textwidth} p{0.16\textwidth} p{0.24\textwidth} p{0.11\textwidth} p{0.10\textwidth} p{0.12\textwidth}}
+\toprule
+\textbf{Métrica} & \textbf{Característica} & \textbf{Fórmula} & \textbf{Unidad} & \textbf{Umbral} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Métrica} & \textbf{Característica} & \textbf{Fórmula} & \textbf{Unidad} & \textbf{Umbral} & \textbf{Fuente} \\
+\midrule
+\endhead
+Completitud de registro de HCE & Efectividad & Notas completadas / notas intentadas & Proporción & >= 0.95 & logs\_hce.csv \\
+Tiempo promedio de registro de HCE & Eficiencia & Suma de tiempos / número de notas & Segundos & <= 8 s & logs\_hce.csv \\
+CSAT normalizado & Satisfacción & Promedio CSAT / 5 & Proporción & >= 0.80 & encuesta\_satisfaccion.csv \\
+Tasa de errores de facturación & Libertad de Riesgo & Errores de facturación / transacciones & Proporción & <= 0.01 & incidentes\_2025.csv \\
+Consistencia entre sedes & Cobertura de Contexto & Mejor tiempo promedio / peor tiempo promedio & Proporción & >= 0.85 & logs\_hce.csv \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Interpretación}
+Los umbrales se fijan antes del cálculo para evitar interpretaciones subjetivas. Cada métrica tiene fuente, unidad y responsable, por lo que puede automatizarse.
+\newpage
+\section*{Escenario 7: Obtención y Validación de Datos}
+
+\small
+\begin{longtable}{p{0.26\textwidth} p{0.12\textwidth} p{0.28\textwidth} p{0.28\textwidth}}
+\toprule
+\textbf{Archivo} & \textbf{Registros} & \textbf{Origen} & \textbf{Uso} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Archivo} & \textbf{Registros} & \textbf{Origen} & \textbf{Uso} \\
+\midrule
+\endhead
+data/logs\_hce.csv & 3150 & Generador de logs HCE & Efectividad, Eficiencia y Cobertura de Contexto \\
+data/encuesta\_satisfaccion.csv & 150 & Encuesta CSAT simulada & Satisfacción por sede y rol \\
+data/incidentes\_2025.csv & 3000 & Conversión desde clasificación Markdown & Libertad de Riesgo y análisis de incidentes \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.24\textwidth} p{0.10\textwidth} p{0.13\textwidth} p{0.35\textwidth} p{0.10\textwidth}}
+\toprule
+\textbf{Archivo} & \textbf{Nulos} & \textbf{Duplicados} & \textbf{Rangos inválidos} & \textbf{Resultado} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Archivo} & \textbf{Nulos} & \textbf{Duplicados} & \textbf{Rangos inválidos} & \textbf{Resultado} \\
+\midrule
+\endhead
+logs\_hce.csv & 0 & 0 & 0 tiempos fuera de 0-120 s; 0 valores inválidos en completada & Válido \\
+encuesta\_satisfaccion.csv & 0 & 0 & 0 puntajes fuera de 1-5 & Válido \\
+incidentes\_2025.csv & 0 & 0 & No aplica & Válido \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Resumen}
+El tiempo promedio HCE fue 7.43 s y el CSAT promedio fue 3.61/5. Los datos quedaron listos para automatización.
+\newpage
+\section*{Escenario 8: Automatización de la Medición}
+
+\small
+\begin{longtable}{p{0.22\textwidth} p{0.30\textwidth} p{0.38\textwidth}}
+\toprule
+\textbf{Componente} & \textbf{Archivo} & \textbf{Función} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Componente} & \textbf{Archivo} & \textbf{Función} \\
+\midrule
+\endhead
+Conversión de incidentes & convertir\_incidentes\_markdown.py & Reconstruye incidentes\_2025.csv desde el material local. \\
+Generación de logs & generar\_logs\_hce.py & Simula eventos de registro clínico por sede. \\
+Generación CSAT & generar\_encuesta\_satisfaccion.py & Crea encuesta de satisfacción por sede y rol. \\
+Validación & validar\_datos.py & Verifica nulos, duplicados y rangos. \\
+Cálculo de métricas & metricas\_iso25022.py & Calcula indicadores ISO/IEC 25022. \\
+Exportación & exportar\_reporte.py & Genera indicadores.json para dashboards. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.17\textwidth} p{0.38\textwidth} p{0.12\textwidth} p{0.12\textwidth} p{0.12\textwidth}}
+\toprule
+\textbf{Característica} & \textbf{Métrica} & \textbf{Valor} & \textbf{Umbral} & \textbf{Estado} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Característica} & \textbf{Métrica} & \textbf{Valor} & \textbf{Umbral} & \textbf{Estado} \\
+\midrule
+\endhead
+Efectividad & Completitud de registro de HCE & 0.9651 & 0.95 & Cumple \\
+Eficiencia & Tiempo promedio de registro de HCE & 7.43 & 8.0 & Cumple \\
+Eficiencia & Notas HCE registradas en 8 segundos o menos & 0.6787 & 0.9 & No cumple \\
+Satisfaccion & Indice de satisfaccion CSAT normalizado & 0.7227 & 0.8 & No cumple \\
+Libertad de Riesgo & Tasa de errores de facturacion con riesgo economico & 0.0301 & 0.01 & No cumple \\
+Cobertura de Contexto & Consistencia de eficiencia entre sedes & 0.9801 & 0.85 & Cumple \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Interpretación}
+Aunque el promedio de HCE cumple 8 s, el RNF-01 no cumple porque solo 67.87\% de notas se registran dentro del umbral. También no cumplen satisfacción y riesgo de facturación.
+\newpage
+\section*{Informe Ejecutivo y Plan de Mejora Continua}
+
+\small
+\begin{longtable}{p{0.25\textwidth} p{0.30\textwidth} p{0.35\textwidth}}
+\toprule
+\textbf{Hallazgo} & \textbf{Evidencia} & \textbf{Impacto} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Hallazgo} & \textbf{Evidencia} & \textbf{Impacto} \\
+\midrule
+\endhead
+Incidentes de efectividad concentrados & 1.493 de 3.000 incidentes & Usuarios no completan tareas o las completan con errores. \\
+Riesgo clínico y financiero & 721 incidentes de Libertad de Riesgo & Posibles errores de medicación, exposición de datos y problemas de facturación. \\
+RNF-01 incumplido & 67.87\% de notas en <= 8 s frente a umbral de 90\% & Lentitud en consulta externa y menor productividad médica. \\
+RNF-03 incumplido & 3.01\% de errores de facturación frente a umbral de 1\% & Riesgo financiero y pérdida de confianza. \\
+Satisfacción baja & CSAT normalizado de 0.7227 frente a 0.80 & Experiencia percibida insuficiente. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.14\textwidth} p{0.34\textwidth} p{0.22\textwidth} p{0.20\textwidth}}
+\toprule
+\textbf{Fase PDCA} & \textbf{Acciones} & \textbf{Responsable} & \textbf{Evidencia} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Fase PDCA} & \textbf{Acciones} & \textbf{Responsable} & \textbf{Evidencia} \\
+\midrule
+\endhead
+Planificar & Definir umbrales, tareas prioritarias y fuentes oficiales. & Calidad, TI, Dirección Médica & Catálogo de métricas. \\
+Hacer & Ejecutar pipeline semanal y generar indicadores. & TI y Calidad & indicadores.json. \\
+Verificar & Comparar resultados contra RNF-01, RNF-03 y CSAT. & Calidad y Auditoría & Informe mensual. \\
+Actuar & Optimizar HCE, facturación, UX e integraciones críticas. & TI, Producto, Operaciones & Backlog de mejoras. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Recomendación}
+Aprobar un ciclo de mejora de 90 días centrado en HCE y facturación, con seguimiento quincenal de indicadores y reporte ejecutivo mensual.
+
+
+\section*{Conclusión General}
+El programa propuesto permite pasar de percepciones aisladas sobre el funcionamiento de MediSalud HIS a evidencia objetiva, repetible y accionable. Los resultados muestran que la organización debe priorizar tres frentes: cumplimiento real del RNF-01 en HCE, reducción de errores de facturación asociados al RNF-03 y mejora de la satisfacción de usuarios clínicos y pacientes.
+
+
+\end{document}

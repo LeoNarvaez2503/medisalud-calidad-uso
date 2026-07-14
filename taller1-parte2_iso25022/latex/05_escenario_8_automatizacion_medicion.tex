@@ -1,0 +1,87 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Escenario 8: Automatización de la Medición}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Escenario 8: Automatización de la Medición}
+
+\small
+\begin{longtable}{p{0.22\textwidth} p{0.30\textwidth} p{0.38\textwidth}}
+\toprule
+\textbf{Componente} & \textbf{Archivo} & \textbf{Función} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Componente} & \textbf{Archivo} & \textbf{Función} \\
+\midrule
+\endhead
+Conversión de incidentes & convertir\_incidentes\_markdown.py & Reconstruye incidentes\_2025.csv desde el material local. \\
+Generación de logs & generar\_logs\_hce.py & Simula eventos de registro clínico por sede. \\
+Generación CSAT & generar\_encuesta\_satisfaccion.py & Crea encuesta de satisfacción por sede y rol. \\
+Validación & validar\_datos.py & Verifica nulos, duplicados y rangos. \\
+Cálculo de métricas & metricas\_iso25022.py & Calcula indicadores ISO/IEC 25022. \\
+Exportación & exportar\_reporte.py & Genera indicadores.json para dashboards. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.17\textwidth} p{0.38\textwidth} p{0.12\textwidth} p{0.12\textwidth} p{0.12\textwidth}}
+\toprule
+\textbf{Característica} & \textbf{Métrica} & \textbf{Valor} & \textbf{Umbral} & \textbf{Estado} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Característica} & \textbf{Métrica} & \textbf{Valor} & \textbf{Umbral} & \textbf{Estado} \\
+\midrule
+\endhead
+Efectividad & Completitud de registro de HCE & 0.9651 & 0.95 & Cumple \\
+Eficiencia & Tiempo promedio de registro de HCE & 7.43 & 8.0 & Cumple \\
+Eficiencia & Notas HCE registradas en 8 segundos o menos & 0.6787 & 0.9 & No cumple \\
+Satisfaccion & Indice de satisfaccion CSAT normalizado & 0.7227 & 0.8 & No cumple \\
+Libertad de Riesgo & Tasa de errores de facturacion con riesgo economico & 0.0301 & 0.01 & No cumple \\
+Cobertura de Contexto & Consistencia de eficiencia entre sedes & 0.9801 & 0.85 & Cumple \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Interpretación}
+Aunque el promedio de HCE cumple 8 s, el RNF-01 no cumple porque solo 67.87\% de notas se registran dentro del umbral. También no cumplen satisfacción y riesgo de facturación.
+
+
+\end{document}

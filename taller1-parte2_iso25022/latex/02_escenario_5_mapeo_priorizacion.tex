@@ -1,0 +1,71 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Escenario 5: Mapeo y Priorización}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Escenario 5: Mapeo de Características de Calidad}
+
+\small
+\begin{longtable}{p{0.25\textwidth} p{0.10\textwidth} p{0.12\textwidth} p{0.35\textwidth} p{0.08\textwidth}}
+\toprule
+\textbf{Tarea} & \textbf{Impacto} & \textbf{Frecuencia} & \textbf{Características ISO/IEC 25022} & \textbf{Prioridad} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Tarea} & \textbf{Impacto} & \textbf{Frecuencia} & \textbf{Características ISO/IEC 25022} & \textbf{Prioridad} \\
+\midrule
+\endhead
+Registrar nota de evolución clínica & Alto & Alta & Eficiencia, Efectividad, Satisfacción, Libertad de Riesgo & 1 \\
+Agendar cita en portal & Alto & Alta & Efectividad, Eficiencia, Satisfacción, Cobertura de Contexto & 1 \\
+Facturar consulta con seguro & Alto & Media & Libertad de Riesgo, Efectividad, Eficiencia & 2 \\
+Completar teleconsulta & Alto & Media & Efectividad, Cobertura de Contexto, Satisfacción & 2 \\
+Dispensar medicamento desde receta electrónica & Alto & Media & Libertad de Riesgo, Efectividad & 2 \\
+Consultar historial de laboratorio & Medio & Alta & Efectividad, Satisfacción & 3 \\
+Generar reporte gerencial mensual & Medio & Baja & Eficiencia, Efectividad & 3 \\
+Actualizar datos personales desde app móvil & Bajo & Media & Cobertura de Contexto, Satisfacción & 4 \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Alcance inicial}
+Se recomiendan para medición inmediata las prioridades 1 y 2: HCE, portal de citas, facturación, teleconsulta y dispensación de medicamentos.
+
+\subsection*{Conclusión}
+La priorización evita medir todo sin foco y concentra recursos en los procesos con mayor riesgo clínico, financiero y reputacional.
+
+
+\end{document}

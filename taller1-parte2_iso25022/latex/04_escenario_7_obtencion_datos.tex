@@ -1,0 +1,81 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Escenario 7: Obtención de Datos}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Escenario 7: Obtención y Validación de Datos}
+
+\small
+\begin{longtable}{p{0.26\textwidth} p{0.12\textwidth} p{0.28\textwidth} p{0.28\textwidth}}
+\toprule
+\textbf{Archivo} & \textbf{Registros} & \textbf{Origen} & \textbf{Uso} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Archivo} & \textbf{Registros} & \textbf{Origen} & \textbf{Uso} \\
+\midrule
+\endhead
+data/logs\_hce.csv & 3150 & Generador de logs HCE & Efectividad, Eficiencia y Cobertura de Contexto \\
+data/encuesta\_satisfaccion.csv & 150 & Encuesta CSAT simulada & Satisfacción por sede y rol \\
+data/incidentes\_2025.csv & 3000 & Conversión desde clasificación Markdown & Libertad de Riesgo y análisis de incidentes \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+
+\small
+\begin{longtable}{p{0.24\textwidth} p{0.10\textwidth} p{0.13\textwidth} p{0.35\textwidth} p{0.10\textwidth}}
+\toprule
+\textbf{Archivo} & \textbf{Nulos} & \textbf{Duplicados} & \textbf{Rangos inválidos} & \textbf{Resultado} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Archivo} & \textbf{Nulos} & \textbf{Duplicados} & \textbf{Rangos inválidos} & \textbf{Resultado} \\
+\midrule
+\endhead
+logs\_hce.csv & 0 & 0 & 0 tiempos fuera de 0-120 s; 0 valores inválidos en completada & Válido \\
+encuesta\_satisfaccion.csv & 0 & 0 & 0 puntajes fuera de 1-5 & Válido \\
+incidentes\_2025.csv & 0 & 0 & No aplica & Válido \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Resumen}
+El tiempo promedio HCE fue 7.43 s y el CSAT promedio fue 3.61/5. Los datos quedaron listos para automatización.
+
+
+\end{document}

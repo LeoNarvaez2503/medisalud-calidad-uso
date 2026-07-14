@@ -1,0 +1,65 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+{\Large Universidad de las Fuerzas Armadas\par}
+{\LARGE \textbf{ESPE}\par}
+\vspace{0.35cm}
+{\large Departamento de Ciencias de la Computación\par}
+\vspace{1.5cm}
+{\Large \textbf{Aseguramiento de la Calidad de Software}\par}
+\vspace{0.5cm}
+{\large \textbf{Grupo: 6}\par}
+\vspace{1.2cm}
+{\Large \textbf{Escenario 6: Catálogo de Métricas}\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
+& Anthony Morales, Leonardo Narváez\\
+\textbf{NRC:} & 30733\\
+\textbf{Docente:} & Ing. Diego Gamboa\\
+\end{tabular}
+\vfill
+{\large 2026\par}
+\end{titlepage}
+
+\section*{Escenario 6: Catálogo de Métricas ISO/IEC 25022}
+
+\small
+\begin{longtable}{p{0.23\textwidth} p{0.16\textwidth} p{0.24\textwidth} p{0.11\textwidth} p{0.10\textwidth} p{0.12\textwidth}}
+\toprule
+\textbf{Métrica} & \textbf{Característica} & \textbf{Fórmula} & \textbf{Unidad} & \textbf{Umbral} & \textbf{Fuente} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Métrica} & \textbf{Característica} & \textbf{Fórmula} & \textbf{Unidad} & \textbf{Umbral} & \textbf{Fuente} \\
+\midrule
+\endhead
+Completitud de registro de HCE & Efectividad & Notas completadas / notas intentadas & Proporción & >= 0.95 & logs\_hce.csv \\
+Tiempo promedio de registro de HCE & Eficiencia & Suma de tiempos / número de notas & Segundos & <= 8 s & logs\_hce.csv \\
+CSAT normalizado & Satisfacción & Promedio CSAT / 5 & Proporción & >= 0.80 & encuesta\_satisfaccion.csv \\
+Tasa de errores de facturación & Libertad de Riesgo & Errores de facturación / transacciones & Proporción & <= 0.01 & incidentes\_2025.csv \\
+Consistencia entre sedes & Cobertura de Contexto & Mejor tiempo promedio / peor tiempo promedio & Proporción & >= 0.85 & logs\_hce.csv \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection*{Interpretación}
+Los umbrales se fijan antes del cálculo para evitar interpretaciones subjetivas. Cada métrica tiene fuente, unidad y responsable, por lo que puede automatizarse.
+
+
+\end{document}
