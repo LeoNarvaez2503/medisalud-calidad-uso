@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {section}{\numberline {2}Comprensión del Modelo SQuaRE}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Niveles de calidad: interna, externa y en uso}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Ejemplo aplicado al módulo de receta médica}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Mapa conceptual de SQuaRE}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Escenario 4: Identificación de Atributos de Calidad en Uso}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conclusión}{3}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Escenario 5: Mapeo de Características de Calidad}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Alcance inicial}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Conclusión}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Escenario 6: Catálogo de Métricas ISO/IEC 25022}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Interpretación}{5}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Escenario 7: Obtención y Validación de Datos}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Resumen}{6}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Escenario 8: Automatización de la Medición}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Interpretación}{7}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Informe Ejecutivo y Plan de Mejora Continua}{8}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Recomendación}{8}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Conclusión General}{8}{section.9}%

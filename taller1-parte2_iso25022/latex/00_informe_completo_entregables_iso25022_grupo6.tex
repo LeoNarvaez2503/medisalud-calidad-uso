@@ -5,15 +5,19 @@
 \usepackage[a4paper,margin=1.8cm]{geometry}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
 \usepackage{longtable}
 \usepackage{tabularx}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
+\setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.18}
 
 \begin{document}
 
+\pagenumbering{gobble}
 \begin{titlepage}
 \centering
 {\Large Universidad de las Fuerzas Armadas\par}
@@ -25,7 +29,9 @@
 \vspace{0.5cm}
 {\large \textbf{Grupo: 6}\par}
 \vspace{1.2cm}
-{\Large \textbf{Informe Completo de Entregables ISO/IEC 25022}\par}
+{\Large \textbf{Informe Único de Calidad en Uso ISO/IEC 25022}\par}
+\vspace{0.35cm}
+{\large Caso de estudio: Sistema de Historia Clínica Electrónica MediSalud HIS\par}
 \vfill
 \begin{tabular}{rl}
 \textbf{Integrantes:} & Caetano Flores, Jordan Guamán,\\
@@ -37,12 +43,58 @@
 {\large 2026\par}
 \end{titlepage}
 
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
 
-\section*{Introducción}
-El presente informe consolida los entregables del taller de medición de Calidad en Uso mediante ISO/IEC 25022 para el caso MediSalud HIS. Se incluyen las fichas de usuario-tarea-contexto, la matriz de priorización, el catálogo de métricas, la obtención de datos, la automatización de indicadores y el plan de mejora continua.
+\section{Introducción}
+El presente informe consolida en un solo documento los entregables del taller de medición de Calidad en Uso mediante ISO/IEC 25022 para el caso MediSalud HIS. Se integran el marco SQuaRE, las fichas de usuario-tarea-contexto, la matriz de priorización, el catálogo de métricas, la obtención y validación de datos, la automatización de indicadores, el informe ejecutivo y el plan de mejora continua.
+
+El objetivo es transformar la percepción sobre el funcionamiento del sistema hospitalario en evidencia objetiva, comparable y accionable. Para ello se relacionan las tareas críticas de médicos, pacientes y personal administrativo con métricas de efectividad, eficiencia, satisfacción, libertad de riesgo y cobertura de contexto.
 
 \newpage
-\section*{Escenario 4: Identificación de Atributos de Calidad en Uso}
+\section{Comprensión del Modelo SQuaRE}
+
+\subsection{Niveles de calidad: interna, externa y en uso}
+Bajo la familia ISO/IEC 25000, la calidad del software se analiza en tres niveles complementarios que cubren diferentes momentos del ciclo de vida del producto:
+
+\begin{center}
+\textbf{Calidad Interna} $\rightarrow$ \textbf{Calidad Externa} $\rightarrow$ \textbf{Calidad en Uso}\\
+Código y estructura \hspace{1.3cm} Pruebas del sistema \hspace{1.3cm} Operación real
+\end{center}
+
+En MediSalud HIS, la calidad interna se enfoca en la estructura técnica de los microservicios, el código fuente y los esquemas de datos. La calidad externa evalúa el comportamiento del sistema ejecutable en ambientes controlados, como pruebas de carga o validación de APIs. La calidad en uso mide el impacto del sistema en producción, considerando si médicos, pacientes y personal administrativo logran completar tareas críticas con efectividad, eficiencia, satisfacción y control del riesgo.
+
+\subsection{Ejemplo aplicado al módulo de receta médica}
+\small
+\begin{longtable}{p{0.18\textwidth} p{0.50\textwidth} p{0.24\textwidth}}
+\toprule
+\textbf{Nivel de calidad} & \textbf{Ejemplo de medición en MediSalud HIS} & \textbf{Herramienta o método} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Nivel de calidad} & \textbf{Ejemplo de medición en MediSalud HIS} & \textbf{Herramienta o método} \\
+\midrule
+\endhead
+Calidad interna & Validar que el método de guardado de receta electrónica tenga complejidad ciclomática menor a 10 y cobertura de pruebas unitarias igual o superior al 80\%. & SonarQube y Pytest. \\
+Calidad externa & Ejecutar una prueba de carga con 150 usuarios concurrentes en ambiente de pruebas para verificar que el endpoint de receta responda en menos de 2 segundos sin errores 500. & JMeter o Locust. \\
+Calidad en uso & Contabilizar incidentes reales donde la receta electrónica se guardó con dosis incorrecta o generó riesgo clínico para el paciente. & Registro de incidentes en producción. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection{Mapa conceptual de SQuaRE}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{mapa_square.png}
+\caption{Familia ISO/IEC 25000 SQuaRE y relación con calidad interna, externa y en uso.}
+\end{figure}
+
+ISO/IEC 25000 establece el marco general, ISO/IEC 25010 define los modelos de calidad, ISO/IEC 25022 proporciona las métricas de Calidad en Uso e ISO/IEC 25040 ordena el proceso de evaluación. En conjunto, estas normas permiten conectar la arquitectura técnica del producto con resultados operativos observables en el contexto hospitalario.
+
+\newpage
+\section{Escenario 4: Identificación de Atributos de Calidad en Uso}
 
 \small
 \begin{longtable}{p{0.16\textwidth} p{0.13\textwidth} p{0.23\textwidth} p{0.21\textwidth} p{0.21\textwidth}}
@@ -61,10 +113,10 @@ Facturación con seguro médico & Personal de admisión/facturación & Generar f
 \end{longtable}
 \normalsize
 
-\subsection*{Conclusión}
+\subsection{Conclusión}
 La calidad en uso debe medirse sobre tareas concretas, no sobre módulos abstractos. Estas fichas permiten convertir procesos críticos en métricas comparables y accionables.
 \newpage
-\section*{Escenario 5: Mapeo de Características de Calidad}
+\section{Escenario 5: Mapeo de Características de Calidad}
 
 \small
 \begin{longtable}{p{0.25\textwidth} p{0.10\textwidth} p{0.12\textwidth} p{0.35\textwidth} p{0.08\textwidth}}
@@ -88,13 +140,13 @@ Actualizar datos personales desde app móvil & Bajo & Media & Cobertura de Conte
 \end{longtable}
 \normalsize
 
-\subsection*{Alcance inicial}
+\subsection{Alcance inicial}
 Se recomiendan para medición inmediata las prioridades 1 y 2: HCE, portal de citas, facturación, teleconsulta y dispensación de medicamentos.
 
-\subsection*{Conclusión}
+\subsection{Conclusión}
 La priorización evita medir todo sin foco y concentra recursos en los procesos con mayor riesgo clínico, financiero y reputacional.
 \newpage
-\section*{Escenario 6: Catálogo de Métricas ISO/IEC 25022}
+\section{Escenario 6: Catálogo de Métricas ISO/IEC 25022}
 
 \small
 \begin{longtable}{p{0.23\textwidth} p{0.16\textwidth} p{0.24\textwidth} p{0.11\textwidth} p{0.10\textwidth} p{0.12\textwidth}}
@@ -115,10 +167,10 @@ Consistencia entre sedes & Cobertura de Contexto & Mejor tiempo promedio / peor 
 \end{longtable}
 \normalsize
 
-\subsection*{Interpretación}
+\subsection{Interpretación}
 Los umbrales se fijan antes del cálculo para evitar interpretaciones subjetivas. Cada métrica tiene fuente, unidad y responsable, por lo que puede automatizarse.
 \newpage
-\section*{Escenario 7: Obtención y Validación de Datos}
+\section{Escenario 7: Obtención y Validación de Datos}
 
 \small
 \begin{longtable}{p{0.26\textwidth} p{0.12\textwidth} p{0.28\textwidth} p{0.28\textwidth}}
@@ -155,10 +207,10 @@ incidentes\_2025.csv & 0 & 0 & No aplica & Válido \\
 \end{longtable}
 \normalsize
 
-\subsection*{Resumen}
+\subsection{Resumen}
 El tiempo promedio HCE fue 7.43 s y el CSAT promedio fue 3.61/5. Los datos quedaron listos para automatización.
 \newpage
-\section*{Escenario 8: Automatización de la Medición}
+\section{Escenario 8: Automatización de la Medición}
 
 \small
 \begin{longtable}{p{0.22\textwidth} p{0.30\textwidth} p{0.38\textwidth}}
@@ -194,17 +246,17 @@ Exportación & exportar\_reporte.py & Genera indicadores.json para dashboards. \
 Efectividad & Completitud de registro de HCE & 0.9651 & 0.95 & Cumple \\
 Eficiencia & Tiempo promedio de registro de HCE & 7.43 & 8.0 & Cumple \\
 Eficiencia & Notas HCE registradas en 8 segundos o menos & 0.6787 & 0.9 & No cumple \\
-Satisfaccion & Indice de satisfaccion CSAT normalizado & 0.7227 & 0.8 & No cumple \\
-Libertad de Riesgo & Tasa de errores de facturacion con riesgo economico & 0.0301 & 0.01 & No cumple \\
+Satisfacción & Índice de satisfacción CSAT normalizado & 0.7227 & 0.8 & No cumple \\
+Libertad de Riesgo & Tasa de errores de facturación con riesgo económico & 0.0301 & 0.01 & No cumple \\
 Cobertura de Contexto & Consistencia de eficiencia entre sedes & 0.9801 & 0.85 & Cumple \\
 \bottomrule
 \end{longtable}
 \normalsize
 
-\subsection*{Interpretación}
+\subsection{Interpretación}
 Aunque el promedio de HCE cumple 8 s, el RNF-01 no cumple porque solo 67.87\% de notas se registran dentro del umbral. También no cumplen satisfacción y riesgo de facturación.
 \newpage
-\section*{Informe Ejecutivo y Plan de Mejora Continua}
+\section{Informe Ejecutivo y Plan de Mejora Continua}
 
 \small
 \begin{longtable}{p{0.25\textwidth} p{0.30\textwidth} p{0.35\textwidth}}
@@ -244,11 +296,11 @@ Actuar & Optimizar HCE, facturación, UX e integraciones críticas. & TI, Produc
 \end{longtable}
 \normalsize
 
-\subsection*{Recomendación}
+\subsection{Recomendación}
 Aprobar un ciclo de mejora de 90 días centrado en HCE y facturación, con seguimiento quincenal de indicadores y reporte ejecutivo mensual.
 
 
-\section*{Conclusión General}
+\section{Conclusión General}
 El programa propuesto permite pasar de percepciones aisladas sobre el funcionamiento de MediSalud HIS a evidencia objetiva, repetible y accionable. Los resultados muestran que la organización debe priorizar tres frentes: cumplimiento real del RNF-01 en HCE, reducción de errores de facturación asociados al RNF-03 y mejora de la satisfacción de usuarios clínicos y pacientes.
 
 
