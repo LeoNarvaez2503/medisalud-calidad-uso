@@ -1,0 +1,82 @@
+{
+  "sistema": "MediSalud HIS",
+  "norma": "ISO/IEC 25022",
+  "periodo": "2025",
+  "metricas": {
+    "efectividad": {
+      "nombre": "Completitud de registro de HCE",
+      "caracteristica": "Efectividad",
+      "valor": 0.9651,
+      "unidad": "proporcion",
+      "umbral": 0.95,
+      "cumple": true
+    },
+    "eficiencia": {
+      "nombre": "Tiempo promedio de registro de HCE",
+      "caracteristica": "Eficiencia",
+      "valor": 7.43,
+      "unidad": "segundos",
+      "umbral": 8.0,
+      "cumple": true
+    },
+    "rnf_01": {
+      "nombre": "Notas HCE registradas en 8 segundos o menos",
+      "caracteristica": "Eficiencia",
+      "valor": 0.6787,
+      "unidad": "proporcion",
+      "umbral": 0.9,
+      "cumple": false
+    },
+    "satisfaccion": {
+      "nombre": "Indice de satisfaccion CSAT normalizado",
+      "caracteristica": "Satisfaccion",
+      "valor": 0.7227,
+      "unidad": "proporcion (0-1)",
+      "umbral": 0.8,
+      "cumple": false
+    },
+    "libertad_riesgo": {
+      "nombre": "Tasa de errores de facturacion con riesgo economico",
+      "caracteristica": "Libertad de Riesgo",
+      "valor": 0.0301,
+      "unidad": "proporcion",
+      "umbral": 0.01,
+      "cumple": false
+    },
+    "cobertura_contexto": {
+      "nombre": "Consistencia de eficiencia entre sedes",
+      "caracteristica": "Cobertura de Contexto",
+      "valor": 0.9801,
+      "unidad": "proporcion",
+      "umbral": 0.85,
+      "cumple": true
+    }
+  },
+  "eficiencia_por_sede": [
+    {
+      "sede": "Ambato",
+      "tiempo_promedio_segundos": 7.48,
+      "eventos": 450
+    },
+    {
+      "sede": "Cuenca",
+      "tiempo_promedio_segundos": 7.4,
+      "eventos": 450
+    },
+    {
+      "sede": "Guayaquil",
+      "tiempo_promedio_segundos": 7.37,
+      "eventos": 900
+    },
+    {
+      "sede": "Manta",
+      "tiempo_promedio_segundos": 7.52,
+      "eventos": 450
+    },
+    {
+      "sede": "Quito",
+      "tiempo_promedio_segundos": 7.43,
+      "eventos": 900
+    }
+  ]
+}

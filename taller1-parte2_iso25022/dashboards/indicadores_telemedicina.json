@@ -1,0 +1,78 @@
+{
+  "sistema": "MediSalud Telemedicina 2.0",
+  "norma": "ISO/IEC 25022",
+  "metricas": {
+    "efectividad": {
+      "nombre": "Tasa de exito de teleconsulta",
+      "caracteristica": "Efectividad",
+      "valor": 0.8831,
+      "unidad": "proporcion",
+      "umbral": 0.95,
+      "cumple": false
+    },
+    "eficiencia": {
+      "nombre": "Duracion promedio de teleconsulta",
+      "caracteristica": "Eficiencia",
+      "valor": 22.1,
+      "unidad": "minutos",
+      "umbral": 30.0,
+      "cumple": true
+    },
+    "satisfaccion": {
+      "nombre": "CSAT normalizado del paciente",
+      "caracteristica": "Satisfaccion",
+      "valor": 0.7527,
+      "unidad": "proporcion (0-1)",
+      "umbral": 0.8,
+      "cumple": false
+    },
+    "libertad_riesgo": {
+      "nombre": "Tasa de incidentes de privacidad de datos",
+      "caracteristica": "Libertad de Riesgo",
+      "valor": 0.0065,
+      "unidad": "proporcion",
+      "umbral": 0.005,
+      "cumple": false
+    },
+    "cobertura_contexto": {
+      "nombre": "Consistencia de exito por conexion",
+      "caracteristica": "Cobertura de Contexto",
+      "valor": 0.7954,
+      "unidad": "proporcion",
+      "umbral": 0.85,
+      "cumple": false
+    }
+  },
+  "desglose_por_sede": [
+    {
+      "sede": "Ambato",
+      "total_intentos": 180,
+      "completadas": 160,
+      "tasa_exito": 0.8889
+    },
+    {
+      "sede": "Cuenca",
+      "total_intentos": 180,
+      "completadas": 164,
+      "tasa_exito": 0.9111
+    },
+    {
+      "sede": "Guayaquil",
+      "total_intentos": 350,
+      "completadas": 308,
+      "tasa_exito": 0.88
+    },
+    {
+      "sede": "Manta",
+      "total_intentos": 180,
+      "completadas": 161,
+      "tasa_exito": 0.8944
+    },
+    {
+      "sede": "Quito",
+      "total_intentos": 350,
+      "completadas": 302,
+      "tasa_exito": 0.8629
+    }
+  ]
+}

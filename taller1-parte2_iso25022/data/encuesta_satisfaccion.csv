@@ -1,0 +1,151 @@
+respuesta_id,sede,rol,puntaje_csat,comentario
+1,Quito,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+2,Ambato,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+3,Manta,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+4,Guayaquil,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+5,Manta,Paciente,5,"Experiencia fluida, clara y confiable durante la tarea."
+6,Ambato,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+7,Cuenca,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+8,Quito,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+9,Guayaquil,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+10,Quito,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+11,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+12,Guayaquil,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+13,Ambato,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+14,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+15,Quito,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+16,Quito,Medico,2,"La tarea se completo, pero con errores o demasiada espera."
+17,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+18,Cuenca,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+19,Guayaquil,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+20,Cuenca,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+21,Cuenca,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+22,Cuenca,Admision,5,"Experiencia fluida, clara y confiable durante la tarea."
+23,Guayaquil,Admision,2,"La tarea se completo, pero con errores o demasiada espera."
+24,Guayaquil,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+25,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+26,Manta,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+27,Quito,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+28,Guayaquil,Paciente,2,"La tarea se completo, pero con errores o demasiada espera."
+29,Cuenca,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+30,Ambato,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+31,Ambato,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+32,Manta,Gerencia,5,"Experiencia fluida, clara y confiable durante la tarea."
+33,Ambato,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+34,Guayaquil,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+35,Cuenca,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+36,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+37,Guayaquil,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+38,Ambato,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+39,Quito,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+40,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+41,Cuenca,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+42,Manta,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+43,Ambato,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+44,Manta,Paciente,5,"Experiencia fluida, clara y confiable durante la tarea."
+45,Ambato,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+46,Guayaquil,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+47,Ambato,Gerencia,2,"La tarea se completo, pero con errores o demasiada espera."
+48,Cuenca,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+49,Quito,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+50,Cuenca,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+51,Guayaquil,Enfermeria,1,Flujo lento y confuso; no pude terminar la tarea sin ayuda.
+52,Guayaquil,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+53,Guayaquil,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+54,Manta,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+55,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+56,Quito,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+57,Quito,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+58,Quito,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+59,Quito,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+60,Guayaquil,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+61,Quito,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+62,Cuenca,Paciente,5,"Experiencia fluida, clara y confiable durante la tarea."
+63,Manta,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+64,Manta,Admision,5,"Experiencia fluida, clara y confiable durante la tarea."
+65,Quito,Admision,5,"Experiencia fluida, clara y confiable durante la tarea."
+66,Manta,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+67,Guayaquil,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+68,Ambato,Medico,5,"Experiencia fluida, clara y confiable durante la tarea."
+69,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+70,Cuenca,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+71,Quito,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+72,Cuenca,Farmacia,5,"Experiencia fluida, clara y confiable durante la tarea."
+73,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+74,Quito,Medico,5,"Experiencia fluida, clara y confiable durante la tarea."
+75,Ambato,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+76,Guayaquil,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+77,Cuenca,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+78,Quito,Gerencia,5,"Experiencia fluida, clara y confiable durante la tarea."
+79,Quito,Gerencia,2,"La tarea se completo, pero con errores o demasiada espera."
+80,Quito,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+81,Cuenca,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+82,Quito,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+83,Cuenca,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+84,Manta,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+85,Guayaquil,Enfermeria,5,"Experiencia fluida, clara y confiable durante la tarea."
+86,Guayaquil,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+87,Guayaquil,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+88,Manta,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+89,Guayaquil,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+90,Guayaquil,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+91,Quito,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+92,Quito,Paciente,5,"Experiencia fluida, clara y confiable durante la tarea."
+93,Manta,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+94,Manta,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+95,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+96,Ambato,Farmacia,5,"Experiencia fluida, clara y confiable durante la tarea."
+97,Cuenca,Gerencia,2,"La tarea se completo, pero con errores o demasiada espera."
+98,Cuenca,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+99,Quito,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+100,Quito,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+101,Ambato,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+102,Quito,Farmacia,5,"Experiencia fluida, clara y confiable durante la tarea."
+103,Cuenca,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+104,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+105,Manta,Enfermeria,5,"Experiencia fluida, clara y confiable durante la tarea."
+106,Manta,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+107,Ambato,Medico,4,El sistema permitio completar la tarea con pocas fricciones.
+108,Cuenca,Admision,2,"La tarea se completo, pero con errores o demasiada espera."
+109,Quito,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+110,Guayaquil,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+111,Quito,Medico,2,"La tarea se completo, pero con errores o demasiada espera."
+112,Guayaquil,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+113,Cuenca,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+114,Guayaquil,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+115,Ambato,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+116,Ambato,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+117,Guayaquil,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+118,Quito,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+119,Cuenca,Enfermeria,5,"Experiencia fluida, clara y confiable durante la tarea."
+120,Cuenca,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+121,Guayaquil,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+122,Quito,Farmacia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+123,Manta,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+124,Manta,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+125,Quito,Gerencia,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+126,Ambato,Enfermeria,5,"Experiencia fluida, clara y confiable durante la tarea."
+127,Quito,Enfermeria,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+128,Guayaquil,Enfermeria,2,"La tarea se completo, pero con errores o demasiada espera."
+129,Manta,Medico,5,"Experiencia fluida, clara y confiable durante la tarea."
+130,Quito,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+131,Ambato,Gerencia,4,El sistema permitio completar la tarea con pocas fricciones.
+132,Guayaquil,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+133,Manta,Admision,4,El sistema permitio completar la tarea con pocas fricciones.
+134,Cuenca,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+135,Manta,Admision,5,"Experiencia fluida, clara y confiable durante la tarea."
+136,Ambato,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+137,Guayaquil,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+138,Ambato,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+139,Ambato,Paciente,4,El sistema permitio completar la tarea con pocas fricciones.
+140,Guayaquil,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+141,Cuenca,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+142,Manta,Enfermeria,5,"Experiencia fluida, clara y confiable durante la tarea."
+143,Ambato,Medico,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+144,Manta,Paciente,1,Flujo lento y confuso; no pude terminar la tarea sin ayuda.
+145,Manta,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+146,Ambato,Farmacia,5,"Experiencia fluida, clara y confiable durante la tarea."
+147,Cuenca,Farmacia,4,El sistema permitio completar la tarea con pocas fricciones.
+148,Quito,Admision,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
+149,Cuenca,Enfermeria,4,El sistema permitio completar la tarea con pocas fricciones.
+150,Cuenca,Paciente,3,"Experiencia aceptable, aunque requiere mejoras en claridad y tiempos."
